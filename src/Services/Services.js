@@ -22,16 +22,4 @@ export default class Services {
       id: itemId
     })
   }
-
-  fetchSearchItem (queryItem) {
-    return this.api.fetchSearchItem ({
-      queryItem: queryItem
-    })
-  }
-
-  fetchItem (itemId) {
-    return this.api.fetchSearchItem ({
-      id: itemId
-    })
-  }
 }

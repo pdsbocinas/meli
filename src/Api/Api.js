@@ -31,7 +31,6 @@ export default class Api {
     return this.$http.get(this.buildUrl('fetchCategories', params))
   }
 
-
   buildUrl (action, params, path) {
     let url = API[action] + (path || '');
     for (let name of Object.keys(params)) {

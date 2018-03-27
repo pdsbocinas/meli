@@ -1,35 +1,28 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class ItemView extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      itemId: props.match.params.id
     };
-
-    this.search = this.search.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentDidMount() {
-    // this.search();
-  }
-
-  search() {
-
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    alert('Modulo de compra no desarrollado :P');
-    alert('Buh!');
   }
 
   render() {
     return (
       <div className="item-container">
-        Soy el item
+        <div>
+          <h2>{this.props.title}</h2>
+          <p>{this.props.price}</p>
+          <p>{this.props.description}</p>
+          <img src={this.props.picture} alt=""/>
+        </div>
+        <Link to={`/items/${this.props.id}`}>
+          <span className="item-title">
+            {this.props.title}
+          </span>
+        </Link>
       </div>
     );
   }
