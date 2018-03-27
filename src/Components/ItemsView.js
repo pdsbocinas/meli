@@ -4,21 +4,23 @@ import ItemView from './ItemView'
 let services = new ServicesLocal();
 
 export default class ItemsView extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
       products: [],
-      query: this.props.location.search
+      query: '',
+      error: ''
     };
   }
 
   getProducts () {
-    services.searching(this.state.query).then(response => {
+    services.searching(this.props.location.search).then(response => {
       this.setState({
         products: response.data.items
       });
     }).catch(error => {
-      console.log(error)
+      this.state.error = error
     })
   }
 

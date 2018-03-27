@@ -5,26 +5,7 @@ import ItemDetail from './Components/ItemDetail';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
-class App extends Component {
-
-  constructor(props) {
-
-    super(props);
-
-    this.state = {
-      value: ''
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    let value = event.target.value;
-
-    this.setState({
-      value
-    });
-  }
+export default class App extends Component {
 
   render() {
     return (
@@ -38,5 +19,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

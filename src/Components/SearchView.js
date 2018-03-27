@@ -4,6 +4,7 @@ import queryString from 'query-string';
 import Logo from '../Resources/images/Logo.png'
 
 export default class Search extends Component {
+
   constructor(props) {
     super(props);
 
@@ -45,9 +46,9 @@ export default class Search extends Component {
       <header className="navbar search">
         <div className="container">
           <div className="flex-container align-center">
-            {/*<Link className="navbar-brand" to="/">*/}
-              {/*<img src={Logo} alt="Mercado Libre" width="100%" height="auto" />*/}
-            {/*</Link>*/}
+            <Link className="navbar-brand" to="/">
+              <img src={Logo} alt="Mercado Libre" width="100%" height="auto" />
+            </Link>
             <form onSubmit={this.handleSubmit}>
               <div className="flex-container">
                 <input

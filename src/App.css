@@ -1,41 +1,41 @@
-/*.App {*/
-  /*text-align: center;*/
-/*}*/
+.App {
+  text-align: center;
+}
 
-/*.navbar {*/
-  /*background-color: #ffe600;*/
-  /*padding: 10px 0;*/
-/*}*/
+.navbar {
+  background-color: #ffe600;
+  padding: 10px 0;
+}
 
-/*.navbar-brand {*/
-  /*max-width: 40px;*/
-  /*height: auto;*/
-  /*display: block;*/
-/*}*/
+.navbar-brand {
+  max-width: 40px;
+  height: auto;
+  display: block;
+}
 
-/*.container {*/
-  /*max-width: 1170px;*/
-  /*margin: 0 auto;*/
-/*}*/
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
 
-/*.flex-container {*/
-  /*display: flex;*/
-/*}*/
+.flex-container {
+  display: flex;
+}
 
-/*.align-center {*/
-  /*align-items: center;*/
-/*}*/
+.align-center {
+  align-items: center;
+}
 
-/*form {*/
-  /*width: 1020px;*/
-/*}*/
+form {
+  width: 1020px;
+}
 
-/*input {*/
-  /*width: 100%;*/
-  /*border: none;*/
-  /*height: 32px;*/
-  /*padding: 5px;*/
-  /*font-size: 18px;*/
-  /*color: #eee;*/
-  /*border-radius: 3px;*/
-/*}*/
+input {
+  width: 100%;
+  border: none;
+  height: 32px;
+  padding: 5px;
+  font-size: 18px;
+  color: #eee;
+  border-radius: 3px;
+}

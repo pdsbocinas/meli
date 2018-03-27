@@ -9,20 +9,20 @@ export default class ItemView extends Component {
     super(props);
 
     this.state = {
-      itemId: props.match.params.id,
-      product: []
+      product: [],
+      amount: '',
+      error: ''
     };
   }
 
   getProducts () {
-    services.fetchingProduct(this.state.itemId).then(response => {
+    services.fetchingProduct(this.props.match.params.id).then(response => {
       this.setState({
         product: response.data.item,
         amount: response.data.item.price.amount
       });
-      console.log(this.state.product.price.amount)
     }).catch(error => {
-      console.log(error)
+      this.state.error = error
     })
   }
 

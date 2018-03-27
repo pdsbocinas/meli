@@ -48,7 +48,7 @@ const author = {
   lastname: 'Sanchez'
 }
 
-function mapper (item) {
+const mapper = (item) => {
   return {
     id: item.id,
     title: item.title,
