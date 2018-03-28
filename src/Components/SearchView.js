@@ -20,7 +20,6 @@ export default class Search extends Component {
 
   handleChange(event) {
     const search = event.target.value;
-    console.log(this.state.search)
     this.setState({
       search
     });
@@ -59,7 +58,7 @@ export default class Search extends Component {
                   value={this.state.search}
                 />
                 <div className="">
-                  <button className="btn" type="submit">Buscar</button>
+                  <button className="btn" type="submit"></button>
                 </div>
               </div>
             </form>

@@ -11,49 +11,58 @@ export default class ItemView extends Component {
     this.state = {
       product: [],
       amount: '',
-      error: ''
+      error: '',
+      sold_quantity: '',
+      condition: '',
+      categories: []
     };
-  }
-
-  getProducts () {
-    services.fetchingProduct(this.props.match.params.id).then(response => {
-      console.log(response)
-      this.setState({
-        product: response.data.item,
-        amount: response.data.item.price.amount
-      });
-    }).catch(error => {
-      this.setState({
-        error: error
-      })
-    })
   }
 
   componentDidMount () {
     this.getProducts();
   }
 
+  getProducts () {
+    services.fetchingProduct(this.props.match.params.id).then(response => {
+      this.setState({
+        product: response.data.item,
+        amount: new Intl.NumberFormat("es-AR",{style: "currency", currency: response.data.item.price.currency, minimumFractionDigits: 0}).format(response.data.item.price.amount),
+        sold_quantity: response.data.item.sold_quantity > 1 || response.data.item.sold_quantity === 0  ? response.data.item.sold_quantity + ' vendidos' : response.data.item.sold_quantity + ' vendido',
+        condition: response.data.item.condition === 'new' ? 'Nuevo - ' : 'Usado - ',
+        categories: response.data.categories
+      });
+    }).catch(error => {
+      this.setState({
+        error: error
+      })
+  })
+  }
 
   render() {
     return (
-      <div className="container">
-          <div className="container">
-            <div>
-              <img src={this.state.product.picture} alt=""/>
-            </div>
-            <div>
-              <p>{this.state.product.condition} - {this.state.product.sold_quantity}</p>
-              <h2>{this.state.product.title}</h2>
-              <span>{this.state.amount}</span>
-              <div className="btn-buy">
-                <a className="btn-buy">Comprar</a>
-              </div>
-            </div>
-            <div>
-              <h3>Descripción del producto</h3>
-              <div dangerouslySetInnerHTML={{ __html: this.state.product.description }} />
-            </div>
-          </div>
+      <div className="container_detail">
+        {this.state.categories &&
+        <div className="container__breadcrumb">
+          <ol>
+          {this.state.categories.map((item,index) => {
+              return <li key={index}>{item}</li>
+          })}
+          </ol>
+        </div>
+        }
+        <div className="item__images-detail">
+          <img src={this.state.product.picture} alt=""/>
+        </div>
+        <div className="container__item-description-detail">
+          <p>{this.state.condition} {this.state.sold_quantity}</p>
+          <h2>{this.state.product.title}</h2>
+          <span>{this.state.amount}</span>
+          <a className="btn-buy">Comprar</a>
+        </div>
+        <div className="container__item-product-detail">
+          <h3>Descripción del producto</h3>
+          <div dangerouslySetInnerHTML={{ __html: this.state.product.description }} />
+        </div>
       </div>
     );
   }

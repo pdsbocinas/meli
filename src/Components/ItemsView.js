@@ -39,7 +39,7 @@ export default class ItemsView extends Component {
 
   render() {
     return (
-      <div className="item-container">
+      <div className="container">
         <div>
           {this.state.products.map((item,index) => {
             return (
@@ -47,9 +47,10 @@ export default class ItemsView extends Component {
                 key={index}
                 id={item.id}
                 title={item.title}
-                price={item.price.amount}
+                price={new Intl.NumberFormat("es-AR",{style: "currency", currency: item.price.currency, minimumFractionDigits: 0}).format(item.price.amount)}
                 description={item.title}
                 picture={item.picture}
+                free_shipping={item.free_shipping}
               />
             )
           })}
