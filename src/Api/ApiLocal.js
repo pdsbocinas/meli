@@ -25,12 +25,9 @@ export default class Api {
     let url = API[action] + (path || '');
     for (let name of Object.keys(params)) {
       if (url.indexOf(':' + name) !== -1) {
-        console.log(url.indexOf(':' + name) !== -1)
         url = url.replace(':' + name, params[name])
-        console.log(':' + name, params[name])
       }
     }
-    console.log(url)
     return url
   }
 }

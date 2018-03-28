@@ -20,7 +20,9 @@ export default class ItemsView extends Component {
         products: response.data.items
       });
     }).catch(error => {
-      this.state.error = error
+      this.setState({
+        error: error
+      })
     })
   }
 

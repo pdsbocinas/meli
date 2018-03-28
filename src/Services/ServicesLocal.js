@@ -12,9 +12,10 @@ export default class ServicesLocal {
     })
   }
 
-  fetchingProduct (productId) {
+  fetchingProduct (productId, categoryId) {
     return this.apiLocal.fetchingProduct({
-      productId: productId
+      productId: productId,
+      categoryId: categoryId
     })
   }
 }

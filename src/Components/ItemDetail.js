@@ -17,12 +17,15 @@ export default class ItemView extends Component {
 
   getProducts () {
     services.fetchingProduct(this.props.match.params.id).then(response => {
+      console.log(response)
       this.setState({
         product: response.data.item,
         amount: response.data.item.price.amount
       });
     }).catch(error => {
-      this.state.error = error
+      this.setState({
+        error: error
+      })
     })
   }
 
@@ -51,8 +54,6 @@ export default class ItemView extends Component {
               <div dangerouslySetInnerHTML={{ __html: this.state.product.description }} />
             </div>
           </div>
-
-
       </div>
     );
   }

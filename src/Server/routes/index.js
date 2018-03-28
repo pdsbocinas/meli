@@ -25,22 +25,27 @@ router.get('/:id', (req, res, next) => {
   let request = req.params.id
   let results = Promise.all([services.fetchId(request), services.fetchDescription(request)])
 
-  results.then ( ([item, description]) => {
-    let product = item.data
-    let productDescription = description.data
-    res.json(Object.assign({},
-      {author},
-      {
-        item: Object.assign({}, mapper(product), {
-          sold_quantity: product.sold_quantity,
-          description: productDescription.text
-        })
-      }
-    ))
+  results.then (([item, description]) => {
+    services.fetchCategories(item.data.category_id).then( response => {
+
+      let categories = response.data.path_from_root.map(categoryMapper)
+      let product = item.data
+      let productDescription = description.data
+
+      res.json(Object.assign({},
+        {author},
+        {
+          item: Object.assign({}, mapper(product), {
+            sold_quantity: product.sold_quantity,
+            description: productDescription.text
+          })
+        },
+        {categories}
+      ))
+    })
   }).catch((e) => {
     error = e
   })
-
 });
 
 const author = {
@@ -62,5 +67,7 @@ const mapper = (item) => {
     free_shipping: item.shipping.free_shipping
   }
 }
+
+const categoryMapper = (category) => category.name
 
 module.exports = router;

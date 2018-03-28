@@ -22,4 +22,10 @@ export default class Services {
       id: itemId
     })
   }
+
+  fetchCategories (categoryId) {
+    return this.api.fetchCategories({
+      categoryId: categoryId
+    })
+  }
 }
