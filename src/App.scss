@@ -63,6 +63,11 @@ button {
   padding-top: 41px;
 }
 
+.container-item-description a {
+  margin-top: 32px;
+  display: block;
+}
+
 .item__images {
   width: 180px;
   height: 180px;
@@ -171,7 +176,7 @@ a {
   display: inline-block;
   font-size: 14px;
   color: #999;
-  font-weight: 400;
+  font-weight: 200;
 }
 
 .container__breadcrumb li:after {
