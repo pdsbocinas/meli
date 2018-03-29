@@ -1,0 +1,85 @@
+.container__breadcrumb ol {
+  margin: 16px;
+  padding: 0; }
+  @media (min-width: 700px) {
+    .container__breadcrumb ol {
+      margin: 16px 0; } }
+  .container__breadcrumb ol li {
+    list-style: none;
+    display: inline-block;
+    font-size: 14px;
+    color: #999999;
+    font-weight: 200; }
+    .container__breadcrumb ol li:last-child {
+      font-weight: 600; }
+      .container__breadcrumb ol li:last-child:after {
+        content: none; }
+    .container__breadcrumb ol li:after {
+      content: '>';
+      margin: 0 8px; }
+
+.container_detail {
+  max-width: 970px;
+  margin: 0 auto; }
+
+.item__images-detail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  @media (min-width: 700px) {
+    .item__images-detail {
+      float: left;
+      width: 70%;
+      display: block; } }
+  .item__images-detail img {
+    width: 50%; }
+
+.container__item-description-detail {
+  width: 100%;
+  margin: 16px;
+  overflow: hidden; }
+  @media (min-width: 700px) {
+    .container__item-description-detail {
+      width: 30%;
+      margin: 0; } }
+  .container__item-description-detail p {
+    margin-top: 32px;
+    font-size: 14px;
+    color: #666666; }
+  .container__item-description-detail span {
+    display: block;
+    font-size: 48px;
+    font-weight: 300;
+    color: #333333; }
+  .container__item-description-detail h2 {
+    margin-top: 16px;
+    margin-bottom: 32px;
+    font-size: 24px;
+    color: #333333;
+    padding-right: 32px; }
+    @media (min-width: 700px) {
+      .container__item-description-detail h2 {
+        padding-right: 0px; } }
+  .container__item-description-detail a {
+    color: #fff;
+    background-color: #3483fA;
+    border: transparent;
+    border-radius: 4px;
+    max-width: 200px;
+    padding: 10px 30px;
+    margin-top: 32px;
+    display: block;
+    text-align: center;
+    cursor: pointer; }
+
+.container__item-product-detail {
+  margin-top: 112px;
+  clear: both; }
+  .container__item-product-detail h3 {
+    font-size: 28px;
+    font-weight: 400;
+    padding-left: 16px; }
+    @media (min-width: 700px) {
+      .container__item-product-detail h3 {
+        padding-left: 0px; } }

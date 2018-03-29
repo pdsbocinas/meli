@@ -1,0 +1,40 @@
+$White: #fff;
+$Iron: #3483fA;
+$Turbo: #ffe600;
+$DustyGray: #999999;
+$Gallery: #eeeeee;
+$MineShaft: #333333;
+$DoveGray: #666666;
+
+@mixin button($color, $background, $border, $border-radius, $width: null) {
+  color: $color;
+  background-color: $background;
+  border: $border;
+  border-radius: $border-radius;
+
+  @if ($width) {
+    max-width: $width;
+  }
+}
+
+$normal-space: 16px;
+$double-space: 32px;
+
+$btn-color: $White;
+$btn-bg: $Iron;
+$btn-border: transparent;
+$btn-border-radius: 4px;
+$btn-width: 200px;
+
+$bg-navbar:  $Turbo;
+$icon-search: './search.png';
+
+$text-input-color: $DustyGray;
+$bg-button-search: $Gallery;
+
+$item-title-color: $MineShaft;
+$item-price-color: $MineShaft;
+
+$text-breadcrumb-color: $DustyGray;
+
+$title-descripcion: $DoveGray;

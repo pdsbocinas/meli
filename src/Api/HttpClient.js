@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default class HttpClient {
   constructor (baseUrl) {
-    this.$http = axios.create({baseURL: baseUrl})
+    this.$http = axios.create(baseUrl)
   }
 
   get (url) {

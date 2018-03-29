@@ -1,0 +1,51 @@
+@import '../../variables.scss';
+
+.navbar {
+  background-color: $bg-navbar;
+  padding: 10px 15px;
+
+  @media (min-width: 960px) {
+    padding: 10px 0;
+
+  }
+
+  .navbar-brand {
+    max-width: 113px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin: 0px 9px 0 0px;
+
+    @media (min-width: 960px) {
+      max-width: 45px;
+      margin: 0px 25px 0 0px;
+    }
+  }
+
+  form {
+    width: 1020px;
+
+    input {
+      width: 100%;
+      border: none;
+      padding: 5px 17px;
+      height: 29px;
+      font-size: 18px;
+      color: $text-input-color;
+      border-radius: 3px 0px 0px 3px;
+    }
+
+    button {
+      background-image: url($icon-search);
+      background-position: center;
+      background-size: 42% auto;
+      background-color: $bg-button-search;
+      border: none;
+      height: 39px;
+      background-repeat: no-repeat;
+      padding: 0 21px;
+      border-radius: 0px 3px 3px 0px;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import queryString from 'query-string';
-import Logo from '../Resources/images/Logo.png'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import queryString from 'query-string'
+import Logo from './Logo.png'
+import './SearchView.css'
 
 export default class Search extends Component {
 
@@ -14,8 +15,8 @@ export default class Search extends Component {
       id: ''
     }
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange(event) {
@@ -26,18 +27,18 @@ export default class Search extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
-    let route = '/';
+    event.preventDefault()
+    let route = '/'
 
     if (this.state.search !== '') {
       let query = queryString.stringify({
         q: this.state.search
-      });
+      })
 
-      route = `/items?${query}`;
+      route = `/items?${query}`
     }
 
-    this.props.history.push(route);
+    this.props.history.push(route)
   }
 
   render() {
@@ -52,7 +53,6 @@ export default class Search extends Component {
               <div className="flex-container">
                 <input
                   type="text"
-                  className="form-control"
                   placeholder="Nunca dejes de buscar"
                   onChange={this.handleChange}
                   value={this.state.search}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ServicesLocal from '../Services/ServicesLocal'
+import ServicesLocal from '../../Services/ServicesLocal'
+import './ItemDetail.css'
 
 let services = new ServicesLocal();
 
@@ -51,7 +52,7 @@ export default class ItemView extends Component {
         </div>
         }
         <div className="item__images-detail">
-          <img src={this.state.product.picture} alt=""/>
+          <img src={this.state.product.picture} alt={this.state.product.title}/>
         </div>
         <div className="container__item-description-detail">
           <p>{this.state.condition} {this.state.sold_quantity}</p>
@@ -64,6 +65,6 @@ export default class ItemView extends Component {
           <div dangerouslySetInnerHTML={{ __html: this.state.product.description }} />
         </div>
       </div>
-    );
+    )
   }
 }

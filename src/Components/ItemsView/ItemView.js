@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Shipping from '../Resources/images/shipping.png'
-
+import Shipping from './shipping.png'
+import './ItemsView.css'
 
 const ItemView = (props) => {
   return(
     <div className="container-product">
       <div className="item__images">
-        <img src={props.picture} alt=""/>
+        <img src={props.picture} alt={props.title}/>
       </div>
       <div className="container-item-description">
         <span className="item__price">{props.price}</span>

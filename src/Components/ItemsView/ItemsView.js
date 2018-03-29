@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import ServicesLocal from '../Services/ServicesLocal'
+import ServicesLocal from '../../Services/ServicesLocal'
 import ItemView from './ItemView'
+import './ItemsView.css'
+
 let services = new ServicesLocal();
 
 export default class ItemsView extends Component {
