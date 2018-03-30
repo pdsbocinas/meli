@@ -12,9 +12,13 @@ router.use(function(req, res, next) {
 router.get('/', (req, res, next) => {
   let error = ''
   let request = req.query.q
+
   services.search(request).then( (response) => {
     let items = response.data.results.slice(0, 4).map(mapper)
-    res.json(Object.assign({},{author,items}))
+    services.fetchCategories(response.data.results[0].category_id).then( response => {
+      let categories = response.data.path_from_root.map(categoryMapper)
+      res.json(Object.assign({},{author},{items},{categories}))
+    })
   }).catch((e) => {
     error = e
   });

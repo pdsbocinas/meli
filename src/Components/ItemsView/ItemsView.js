@@ -11,6 +11,7 @@ export default class ItemsView extends Component {
     super(props);
     this.state = {
       products: [],
+      categories: [],
       query: '',
       error: ''
     };
@@ -18,8 +19,10 @@ export default class ItemsView extends Component {
 
   getProducts () {
     services.searching(this.props.location.search).then(response => {
+      console.log(response.data)
       this.setState({
-        products: response.data.items
+        products: response.data.items,
+        categories: response.data.categories
       });
     }).catch(error => {
       this.setState({
@@ -42,6 +45,15 @@ export default class ItemsView extends Component {
   render() {
     return (
       <div className="container">
+          {this.state.categories &&
+          <div className="container__breadcrumb">
+            <ol>
+                {this.state.categories.map((item,index) => {
+                    return <li key={index}>{item}</li>
+                })}
+            </ol>
+          </div>
+          }
         <div>
           {this.state.products.map((item,index) => {
             return (
