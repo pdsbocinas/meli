@@ -19,7 +19,6 @@ export default class ItemsView extends Component {
 
   getProducts () {
     services.searching(this.props.location.search).then(response => {
-      console.log(response.data)
       this.setState({
         products: response.data.items,
         categories: response.data.categories
