@@ -53,7 +53,7 @@ export default class ItemsView extends Component {
             </ol>
           </div>
           }
-        <div>
+        <main>
           {this.state.products.map((item,index) => {
             return (
               <ItemView
@@ -67,7 +67,7 @@ export default class ItemsView extends Component {
               />
             )
           })}
-        </div>
+        </main>
       </div>
     );
   }

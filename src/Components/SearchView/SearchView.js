@@ -43,7 +43,7 @@ export default class Search extends Component {
 
   render() {
     return (
-      <header className="navbar search">
+      <nav className="navbar search">
         <div className="container">
           <div className="flex-container align-center">
             <Link className="navbar-brand" to="/">
@@ -64,7 +64,7 @@ export default class Search extends Component {
             </form>
           </div>
         </div>
-      </header>
+      </nav>
     );
   }
 }

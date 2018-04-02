@@ -5,14 +5,14 @@ import './ItemsView.css'
 
 const ItemView = (props) => {
   return(
-    <div className="container-product">
+    <article className="container-product">
       <div className="item__images">
         <img src={props.picture} alt={props.title}/>
       </div>
       <div className="container-item-description">
         <span className="item__price">{props.price}</span>
         { props.free_shipping &&
-          <span>
+          <span className="shipping">
             <img src={Shipping} className="item__shipping" alt="Envío gratis" />
           </span>
         }
@@ -22,7 +22,7 @@ const ItemView = (props) => {
         </h2>
         </Link>
       </div>
-    </div>
+    </article>
   )
 }
 

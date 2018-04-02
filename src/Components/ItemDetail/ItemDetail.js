@@ -54,16 +54,16 @@ export default class ItemView extends Component {
         <div className="item__images-detail">
           <img src={this.state.product.picture} alt={this.state.product.title}/>
         </div>
-        <div className="container__item-description-detail">
-          <p>{this.state.condition} {this.state.sold_quantity}</p>
-          <h2>{this.state.product.title}</h2>
-          <span>{this.state.amount}</span>
-          <a className="btn-buy">Comprar</a>
-        </div>
-        <div className="container__item-product-detail">
-          <h3>Descripción del producto</h3>
+        <section className="container__item-description-detail">
+          <p className="item__condition">{this.state.condition} {this.state.sold_quantity}</p>
+          <h2 className="item__product_title">{this.state.product.title}</h2>
+          <span className="item__price">{this.state.amount}</span>
+          <a href="javascript:void(0);" title="Buy product" className="btn_buy">Comprar</a>
+        </section>
+        <section className="container__item-product-detail">
+          <h3 className="item__description_title">Descripción del producto</h3>
           <div dangerouslySetInnerHTML={{ __html: this.state.product.description }} />
-        </div>
+        </section>
       </div>
     )
   }
