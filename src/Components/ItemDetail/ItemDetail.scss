@@ -37,6 +37,14 @@
 .container_detail {
   max-width:970px;
   margin: 0 auto;
+
+  @media(min-width: 768px) {
+    margin: 0 40px;
+  }
+
+  @media(min-width: 900px) {
+    margin: 0 auto;
+  }
 }
 
 .item__images-detail {
